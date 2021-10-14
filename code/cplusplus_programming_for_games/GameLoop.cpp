@@ -23,6 +23,19 @@ int main()
 
 int GameLoop::init()
 {
+	player = new Player(renderer);
+	player->init();
+
+	// The block of code below creates a render to use in the window then checks if the renderer is working
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if (renderer == NULL)
+	{
+		cout << "Could not initialise renderer." << endl;
+		cout << SDL_GetError() << endl;
+		return -1;
+	}
+
+	// checks if the SDL2 is working properly
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		cout << "Could not initialise SDL2" << endl;
@@ -30,7 +43,7 @@ int GameLoop::init()
 		return -1;
 	}
 
-	
+	// creates a game window
 	window = SDL_CreateWindow(
 		"Window Finally",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -38,6 +51,7 @@ int GameLoop::init()
 		SDL_WINDOW_SHOWN
 	);
 
+	// checks if the window has been made
 	if (window == NULL)
 	{
 		cout << "Could not initialise window." << endl;
@@ -45,9 +59,11 @@ int GameLoop::init()
 		return -1;
 	}
 
-	screenSurface = SDL_GetWindowSurface(window);
+	screenSurface = SDL_GetWindowSurface(window); // grabs the window's size
 
 	return 0;
+
+	// return 0 means it's working, any other number means an error has occured.
 }
 
 bool GameLoop::keepAlive()
@@ -88,6 +104,7 @@ void GameLoop::render()
 
 void GameLoop::clean()
 {	
+	delete player;
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 

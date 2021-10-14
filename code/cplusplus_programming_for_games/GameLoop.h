@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <iostream>
 
+
 const int screenW = 800;
 const int screenH = 600;
 
@@ -20,6 +21,11 @@ public:
 	void clean();
 
 private:
+	SDL_Window* window = nullptr;
+	SDL_Surface* screenSurface = nullptr;
+	SDL_Renderer* renderer = nullptr;
+
+	Player* player = nullptr;
 
 };
 
