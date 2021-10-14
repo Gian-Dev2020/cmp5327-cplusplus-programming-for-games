@@ -87,7 +87,7 @@ void GameLoop::render()
 }
 
 void GameLoop::clean()
-{
+{	
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 
