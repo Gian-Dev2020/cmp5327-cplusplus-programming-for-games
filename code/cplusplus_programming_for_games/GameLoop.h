@@ -2,6 +2,7 @@
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
 #include <iostream>
+#include "Player.h"
 
 
 const int screenW = 800;
