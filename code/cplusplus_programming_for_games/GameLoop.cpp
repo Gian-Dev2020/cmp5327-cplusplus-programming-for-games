@@ -23,8 +23,6 @@ int main()
 
 int GameLoop::init()
 {
-	player = new Player(renderer);
-	player->init();
 
 	// The block of code below creates a render to use in the window then checks if the renderer is working
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -58,6 +56,9 @@ int GameLoop::init()
 		cout << SDL_GetError() << endl;
 		return -1;
 	}
+
+	player = new Player(renderer);
+	player->init();
 
 	screenSurface = SDL_GetWindowSurface(window); // grabs the window's size
 
