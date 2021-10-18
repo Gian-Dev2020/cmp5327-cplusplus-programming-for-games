@@ -14,7 +14,10 @@ public:
 	void clean();
 
 
-	void moveR();
+	void moveR()
+	{
+		x += someSpeedConstant;
+	}
 
 private:
 	int x = 0;
