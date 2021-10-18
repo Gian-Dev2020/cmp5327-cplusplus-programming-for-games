@@ -13,8 +13,20 @@ public:
 	void update();
 	void clean();
 
+
+	void moveR();
+
 private:
+	int x = 0;
+	int y = 0;
+	int windowH = 0;
+	int windowW = 0;
+	int someSpeedConstant = 15;
+
 	SDL_Renderer* renderer = nullptr;
+
 	SDL_Texture* texture = nullptr;
 };
+
+
 

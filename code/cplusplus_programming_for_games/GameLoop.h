@@ -13,13 +13,17 @@ const int screenH = 600;
 class GameLoop
 {
 public:
-	
+
 	int init();
 
 	void update();
 	void render();
 	bool keepAlive();
+	void handleInput(SDL_Scancode& keyScanCode);
+
 	void clean();
+
+	SDL_Renderer* getRenderer() { return renderer; }
 
 private:
 	SDL_Window* window = nullptr;
@@ -29,4 +33,4 @@ private:
 	Player* player = nullptr;
 
 };
-	
+

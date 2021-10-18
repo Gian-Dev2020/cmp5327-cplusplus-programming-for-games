@@ -3,9 +3,6 @@
 
 using namespace std;
 
-SDL_Window* window = nullptr;
-SDL_Surface* screenSurface = nullptr;
-
 int main()
 {
 	GameLoop gameloop = GameLoop();
@@ -21,17 +18,10 @@ int main()
 	return 0;
 }
 
+
+
 int GameLoop::init()
 {
-
-	// The block of code below creates a render to use in the window then checks if the renderer is working
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if (renderer == NULL)
-	{
-		cout << "Could not initialise renderer." << endl;
-		cout << SDL_GetError() << endl;
-		return -1;
-	}
 
 	// checks if the SDL2 is working properly
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
@@ -57,6 +47,15 @@ int GameLoop::init()
 		return -1;
 	}
 
+	// The block of code below creates a render to use in the window then checks if the renderer is working
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if (renderer == NULL)
+	{
+		cout << "Could not initialise renderer." << endl;
+		cout << SDL_GetError() << endl;
+		return -1;
+	}
+
 	player = new Player(renderer);
 	player->init();
 
@@ -65,6 +64,16 @@ int GameLoop::init()
 	return 0;
 
 	// return 0 means it's working, any other number means an error has occured.
+}
+
+
+void GameLoop::handleInput(SDL_Scancode& keyScanCode)
+{
+	switch (keyScanCode)
+	{
+	case SDL_SCANCODE_D:
+		player->moveR();
+	}
 }
 
 bool GameLoop::keepAlive()
@@ -93,11 +102,6 @@ bool GameLoop::keepAlive()
 	return true;
 }
 
-void GameLoop::update()
-{
-
-}
-
 void GameLoop::render()
 {
 	SDL_RenderClear(renderer);
@@ -105,8 +109,14 @@ void GameLoop::render()
 	SDL_RenderPresent(renderer);
 }
 
+void GameLoop::update()
+{
+
+}
+
+
 void GameLoop::clean()
-{	
+{
 	delete player;
 	SDL_DestroyWindow(window);
 	SDL_Quit();
