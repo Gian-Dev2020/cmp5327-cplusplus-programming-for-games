@@ -73,7 +73,17 @@ void GameLoop::handleInput(SDL_Scancode& keyScanCode)
 	{
 	case SDL_SCANCODE_D:
 		player->moveR();
+
+	case SDL_SCANCODE_A:
+		player->MoveL();
+
+	case SDL_SCANCODE_W:
+		player->MoveUp();
+
+	case SDL_SCANCODE_S:
+		player->MoveDown();
 	}
+	
 }
 
 bool GameLoop::keepAlive()
@@ -89,13 +99,7 @@ bool GameLoop::keepAlive()
 
 		if (userInput.type == SDL_KEYDOWN)
 		{
-			switch (userInput.key.keysym.scancode)
-			{
-			case SDL_SCANCODE_F:
-				break;
-			default:
-				break;
-			}
+			handleInput(userInput.key.keysym.scancode);
 		}
 	}
 

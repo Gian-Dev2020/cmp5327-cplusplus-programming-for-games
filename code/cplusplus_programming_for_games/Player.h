@@ -19,12 +19,28 @@ public:
 		x += someSpeedConstant;
 	}
 
+	void MoveL()
+	{
+		x -= someSpeedConstant;
+	}
+
+	void MoveUp()
+	{
+		y -= someSpeedConstant;
+	}
+
+	void MoveDown()
+	{
+		y += someSpeedConstant;
+	}
+
+
 private:
 	int x = 0;
 	int y = 0;
 	int windowH = 0;
 	int windowW = 0;
-	int someSpeedConstant = 15;
+	int someSpeedConstant = 10;
 
 	SDL_Renderer* renderer = nullptr;
 
