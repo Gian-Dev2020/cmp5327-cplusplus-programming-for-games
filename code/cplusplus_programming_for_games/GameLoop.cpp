@@ -69,19 +69,24 @@ int GameLoop::init()
 
 void GameLoop::handleInput(SDL_Scancode& keyScanCode)
 {
+	// The switch case statement below is how the keys on a keyboard are assigned each of the following functions.
 	switch (keyScanCode)
 	{
 	case SDL_SCANCODE_D:
 		player->moveR();
+		break;
 
 	case SDL_SCANCODE_A:
 		player->MoveL();
+		break;
 
 	case SDL_SCANCODE_W:
 		player->MoveUp();
+		break;
 
 	case SDL_SCANCODE_S:
 		player->MoveDown();
+		break;
 	}
 	
 }
