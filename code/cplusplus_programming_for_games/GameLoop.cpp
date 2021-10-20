@@ -56,7 +56,7 @@ int GameLoop::init()
 		return -1;
 	}
 
-	player = new Player(renderer);
+	player = new Player(renderer, screenW, screenH);
 	player->init();
 
 	screenSurface = SDL_GetWindowSurface(window); // grabs the window's size

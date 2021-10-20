@@ -6,7 +6,7 @@
 class Player
 {
 public:
-	Player(SDL_Renderer* sdlRenderer);
+	Player(SDL_Renderer* sdlRenderer, int _windowW, int _windowH);
 
 	void init();
 	void render();
@@ -16,8 +16,8 @@ public:
 
 	void moveR()
 	{
-		x += someSpeedConstant;
-
+		portion.x += someSpeedConstant;
+		
 		if (portion.x + portion.w >= windowW)
 		{
 			portion.x = windowW - portion.x;
@@ -26,29 +26,28 @@ public:
 
 	void MoveL()
 	{
-		x -= someSpeedConstant;
+		/*portion.x -= someSpeedConstant;*/
 
 		
 	}
 
 	void MoveUp()
 	{
-		y -= someSpeedConstant;
+		portion.y -= someSpeedConstant;
 
 		
 	}
 
 	void MoveDown()
 	{
-		y += someSpeedConstant;
+		portion.y += someSpeedConstant;
 	}
 
 
 private:
-	int x = 0;
-	int y = 0;
-	int windowH = 0;
-	int windowW = 0;
+	
+	int windowH = 750;
+	int windowW = 750;
 	int someSpeedConstant = 10;
 
 	SDL_Rect portion;

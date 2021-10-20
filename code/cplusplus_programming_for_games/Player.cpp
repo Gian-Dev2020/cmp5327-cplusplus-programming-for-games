@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Player::Player(SDL_Renderer* sdlRenderer)
+Player::Player(SDL_Renderer* sdlRenderer, int _windowW, int _windowH)
 {
 	renderer = sdlRenderer;
 }
@@ -23,12 +23,9 @@ void Player::init()
 
 void Player::render()
 {
-	SDL_Rect portion = SDL_Rect();
-	// The x and y sets the sprite's location on the screen
-	portion.x = x; 
-	portion.y = y;
+	
 
-	float playerWidth = 0.2f * (float)windowW;
+	float playerWidth = 0.1f * (float)windowW;
 
 	// The w and h sets the player's size
 	portion.w = (int)playerWidth;
