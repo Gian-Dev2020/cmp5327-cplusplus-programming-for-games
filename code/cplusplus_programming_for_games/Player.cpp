@@ -31,8 +31,8 @@ void Player::render()
 	float playerWidth = 0.2f * (float)windowW;
 
 	// The w and h sets the player's size
-	portion.w = 120;
-	portion.h = 120;
+	portion.w = (int)playerWidth;
+	portion.h = (int)playerWidth;
 	SDL_RenderCopy(renderer, texture, NULL, &portion);
 }
 

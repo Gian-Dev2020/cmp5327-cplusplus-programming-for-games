@@ -17,16 +17,25 @@ public:
 	void moveR()
 	{
 		x += someSpeedConstant;
+
+		if (portion.x + portion.w >= windowW)
+		{
+			portion.x = windowW - portion.x;
+		}
 	}
 
 	void MoveL()
 	{
 		x -= someSpeedConstant;
+
+		
 	}
 
 	void MoveUp()
 	{
 		y -= someSpeedConstant;
+
+		
 	}
 
 	void MoveDown()
@@ -41,6 +50,8 @@ private:
 	int windowH = 0;
 	int windowW = 0;
 	int someSpeedConstant = 10;
+
+	SDL_Rect portion;
 
 	SDL_Renderer* renderer = nullptr;
 
