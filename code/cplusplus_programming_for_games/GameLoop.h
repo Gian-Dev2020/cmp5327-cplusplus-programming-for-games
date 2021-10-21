@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <iostream>
 #include "Player.h"
+#include "FontRender.h"
 
 
 const int screenW = 800;
@@ -29,6 +30,8 @@ private:
 	SDL_Window* window = nullptr;
 	SDL_Surface* screenSurface = nullptr;
 	SDL_Renderer* renderer = nullptr;
+
+	std::unique_ptr<FontRender> fontRenderer;
 
 	Player* player = nullptr;
 

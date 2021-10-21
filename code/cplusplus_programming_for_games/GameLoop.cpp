@@ -59,6 +59,9 @@ int GameLoop::init()
 	player = new Player(renderer, screenW, screenH);
 	player->init();
 
+	fontRenderer = unique_ptr<FontRender>(new FontRender(renderer));
+	fontRenderer->init();
+
 	screenSurface = SDL_GetWindowSurface(window); // grabs the window's size
 
 	return 0;
@@ -115,6 +118,7 @@ void GameLoop::render()
 {
 	SDL_RenderClear(renderer);
 	player->render();
+	fontRenderer->render("You working?");
 	SDL_RenderPresent(renderer);
 }
 
@@ -126,6 +130,7 @@ void GameLoop::update()
 
 void GameLoop::clean()
 {
+	fontRenderer->clean();
 	delete player;
 	SDL_DestroyWindow(window);
 	SDL_Quit();
