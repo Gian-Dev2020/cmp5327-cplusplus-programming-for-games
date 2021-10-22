@@ -18,25 +18,31 @@
     <ClCompile Include="source\cplusplus_programming_for_games.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameLoop.cpp">
+    <ClCompile Include="source\FontRender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="source\GameLoop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FontRender.cpp">
+    <ClCompile Include="source\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\TiledMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameLoop.h">
+    <ClInclude Include="source\FontRender.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="source\GameLoop.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="FontRender.h">
+    <ClInclude Include="source\Player.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TiledMap.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

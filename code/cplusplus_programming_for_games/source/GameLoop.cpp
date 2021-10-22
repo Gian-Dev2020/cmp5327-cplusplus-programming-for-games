@@ -62,6 +62,9 @@ int GameLoop::init()
 	fontRenderer = unique_ptr<FontRender>(new FontRender(renderer));
 	fontRenderer->init();
 
+	TileMap = unique_ptr<TiledMap>(new TiledMap(renderer, "Assets/TileMap.png"));
+	TileMap->init();
+
 	screenSurface = SDL_GetWindowSurface(window); // grabs the window's size
 
 	return 0;
@@ -119,6 +122,7 @@ void GameLoop::render()
 	SDL_RenderClear(renderer);
 	player->render();
 	fontRenderer->render("You working?");
+	TileMap->render();
 	SDL_RenderPresent(renderer);
 }
 
@@ -131,6 +135,7 @@ void GameLoop::update()
 void GameLoop::clean()
 {
 	fontRenderer->clean();
+	TileMap->clean();
 	delete player;
 	SDL_DestroyWindow(window);
 	SDL_Quit();

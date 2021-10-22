@@ -19,15 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FontRender.cpp" />
-    <ClCompile Include="GameLoop.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="source\FontRender.cpp" />
+    <ClCompile Include="source\GameLoop.cpp" />
+    <ClCompile Include="source\Player.cpp" />
     <ClCompile Include="source\cplusplus_programming_for_games.cpp" />
+    <ClCompile Include="source\TiledMap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FontRender.h" />
-    <ClInclude Include="GameLoop.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="source\FontRender.h" />
+    <ClInclude Include="source\GameLoop.h" />
+    <ClInclude Include="source\Player.h" />
+    <ClInclude Include="source\TiledMap.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

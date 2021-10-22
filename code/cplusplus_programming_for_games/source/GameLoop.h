@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Player.h"
 #include "FontRender.h"
+#include "TiledMap.h"
 
 
 const int screenW = 800;
@@ -32,6 +33,7 @@ private:
 	SDL_Renderer* renderer = nullptr;
 
 	std::unique_ptr<FontRender> fontRenderer;
+	std::unique_ptr<TiledMap> TileMap;
 
 	Player* player = nullptr;
 
