@@ -26,7 +26,7 @@ public:
 
 	void MoveL()
 	{
-		/*portion.x -= someSpeedConstant;*/
+		portion.x -= someSpeedConstant;
 
 		
 	}
