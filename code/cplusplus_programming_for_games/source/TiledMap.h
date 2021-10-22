@@ -8,7 +8,7 @@ using namespace std;
 class TiledMap
 {
 public:
-	TiledMap(SDL_Renderer* RendererTM, string MapName);
+	TiledMap(SDL_Renderer* TMRenderer, string TMfilename);
 
 	int init();
 	void clean();

@@ -1,6 +1,13 @@
 #include "TiledMap.h"
 #include <SDL_image.h>
 
+
+TiledMap::TiledMap(SDL_Renderer* TMRenderer, string TMfilename)
+{
+	MapRenderer = TMRenderer;
+
+}
+
 int TiledMap::init()
 {
 	SDL_Surface* Mapimage = IMG_Load(filename.c_str());
