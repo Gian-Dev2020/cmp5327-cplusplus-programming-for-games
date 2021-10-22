@@ -5,6 +5,7 @@
 TiledMap::TiledMap(SDL_Renderer* TMRenderer, string TMfilename)
 {
 	MapRenderer = TMRenderer;
+	filename = TMfilename;
 
 }
 
