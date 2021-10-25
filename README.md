@@ -10,6 +10,8 @@ Features:
 * Collect and switch between weapons :bomb:
 * Load game maps from the main menu :desert_island:
 * Collect as many coins as you can :moneybag:
+* Melee attack with physcial weapons like dagger :dagger:
+* Power-ups like healthpacks 🩹
 
 ## Dependencies
 * SDL library
